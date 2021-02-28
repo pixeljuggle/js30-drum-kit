@@ -4,7 +4,7 @@
   --primary: #242424;
   --secondary: #f2f2f2;
   --accent: white;
-  --border-width: 4px;
+  --border-width: 6px;
   --gradient: linear-gradient(
     60deg,
     #3063f0,
@@ -22,7 +22,7 @@
   --primary: #f2f2f2;
   --secondary: #242424;
   --accent: black;
-  --border-width: 4px;
+  --border-width: 6px;
   --gradient: linear-gradient(
     60deg,
     #5f86f2,
@@ -174,7 +174,7 @@ section h2 {
   margin: 1rem;
   font-size: 0.8rem;
   padding: 1rem .5rem;
-  transition: all .07s ease;
+  transition: all .08s ease;
   width: 6rem;
   text-align: center;
   color: var(--secondary);
@@ -219,14 +219,12 @@ section h2 {
 }
 
 .playing {
-  /* transform: scale(1); */
   position: relative;
   border-radius: var(--border-width);
-  font-size: 0.81rem;
-aa}
+  color: var(--accent);
+}
 
 .playing::after {
-  transform: scale(1.1);
   position: absolute;
   content: "";
   top: calc(-1 * var(--border-width));
@@ -246,13 +244,14 @@ aa}
 kbd {
   display: block;
   font-size: 3rem;
+  pointer-events: none;
 }
 
 .sound {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
-  color: var(--accent);
+  pointer-events: none;
 }
 
 

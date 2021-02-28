@@ -163,7 +163,7 @@ section h2 {
 .keys {
   display: flex;
   /* flex: 1; */
-  min-height: 80vh;
+  /* min-height: 80vh; */
   align-items: flex-start;
   justify-content: center;
   align-content: flex-start;
@@ -219,10 +219,11 @@ section h2 {
 }
 
 .playing {
-  transform: scale(1.1);
+  /* transform: scale(1); */
   position: relative;
   border-radius: var(--border-width);
-}
+  font-size: 0.81rem;
+aa}
 
 .playing::after {
   transform: scale(1.1);
@@ -248,7 +249,7 @@ kbd {
 }
 
 .sound {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
   color: var(--accent);

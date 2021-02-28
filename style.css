@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+.theme-light {
+  --primary: #242424;
+  --secondary: #f2f2f2;
+  --accent: white;
+  --border-width: 4px;
+  --gradient: linear-gradient(
+    60deg,
+    #3063f0,
+    #ae00ff,
+    #f535c8,
+    #f82529,
+    #f1bd2e,
+    #8ef71e,
+    #25ee54,
+    #26f3f0,
+    #3063f0
+  );
+}
+.theme-dark {
+  --primary: #f2f2f2;
+  --secondary: #242424;
+  --accent: black;
+  --border-width: 4px;
+  --gradient: linear-gradient(
+    60deg,
+    #5f86f2,
+    #a65ff2,
+    #f25fd0,
+    #f25f61,
+    #f2cb5f,
+    #abf25f,
+    #5ff281,
+    #5ff2f0
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  color: var(--primary);
+  background: var(--secondary);
+}
+
+.body-dark {
+  font-family: "Quicksand", sans-serif;
+  color: var(--secondary);
+  background: var(--primary);
+}
+
+.rm-lnk a,
+.rm-lnk a:link,
+.rm-lnk a:visited,
+.rm-lnk a:hover,
+.rm-lnk a:active {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.logo-container {
+  position: relative;
+  height: 63px;
+  width: 110px;
+  background: transparent;
+  overflow: hidden;
+}
+.nav-icon {
+  background: var(--primary);
+  -webkit-mask: url(./images/aw-logo.svg) no-repeat;
+  -webkit-mask-size: 110px 63px;
+  mask: url(./images/aw-logo.svg) no-repeat;
+  mask-size: 110px 63px;
+  height: 63px;
+  width: 110px;
+}
+
+.nav-icon:hover {
+  z-index: -1;
+  background: var(--gradient);
+  background-size: 400% 400%;
+  animation: moveGradientLogo 4s alternate infinite;
+}
+
+
+@keyframes moveGradientLogo {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 15vw 20px 15vw;
+}
+
+#nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+
+#nav-links li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 0px 30px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+
+#nav-links button {
+  padding:0px;
+  margin: 0px;
+  background: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#nav-links a {
+  padding: 15px 20px 15px 20px;
+  transition: 0.2s ease;
+}
+
+#nav-links a:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border-radius: 3px;
+}
+
+#nav-links .current-page a {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border-radius: 3px;
+}
+
+section {
+  margin: 50px 15vw 0px 15vw;
+}
+
+section h2 {
+  margin: 10px 0vw 30px 0vw;
+}
+
+
+.keys {
+  display: flex;
+  /* flex: 1; */
+  min-height: 80vh;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.key {
+  margin: 1rem;
+  font-size: 0.8rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 6rem;
+  text-align: center;
+  color: var(--secondary);
+  background: var(--primary);
+  position: relative;
+  border-radius: var(--border-width);
+}
+
+.key::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: var(--primary);
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+}
+
+.key:hover {
+  position: relative;
+  border-radius: var(--border-width);
+}
+
+.key:hover::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: var(--gradient);
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  -webkit-animation: moveGradient 4s alternate infinite;
+  animation: moveGradient 4s alternate infinite;
+}
+
+.playing {
+  transform: scale(1.1);
+  position: relative;
+  border-radius: var(--border-width);
+}
+
+.playing::after {
+  transform: scale(1.1);
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: var(--gradient);
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  -webkit-animation: moveGradient 4s alternate infinite;
+  animation: moveGradient 4s alternate infinite;
+}
+
+
+kbd {
+  display: block;
+  font-size: 3rem;
+}
+
+.sound {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: var(--accent);
+}
+
+
+
+@-webkit-keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+
+@media only screen and (max-width: 950px) {
+  #nav-bar {
+    margin: 20px 5vw 20px 5vw;
+  }
+
+  section {
+    margin: 50px 5vw 0px 5vw;
+  }
+
+  .card-border {
+    margin: 5px 10px 40px 10px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #nav-bar {
+    flex-direction: row;
+    margin: 0px 0vw 0px 0vw;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    transform: rotate(90deg) translate(0px, -100px);
+    width: 85vh;
+    transform-origin: 0% 0%;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+  }
+  #nav-links {
+    margin-top: 20px;
+  }
+
+  #nav-links li {
+    margin: 0px 0px 0px 10px;
+  }
+
+  section {
+    margin: 45px 12vw 0px 130px;
+    transform: translate(0px, -70px);
+  }
+
+  .card-container {
+    justify-content: flex-start;
+  }
+  .card-border {
+    margin: 5px 5px 30px 5px;
+  }
+  .card-image-container img {
+  }
+
+  #logo {
+    transform: scale(0.6) translate(0px, 20px) rotate(-90deg);
+  }
+}

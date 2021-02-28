@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Javascript Drum Kit</title>
+</head>
+
+<body>
+  <header>
+    <nav id="nav-bar">
+
+      <a id="logo" href="./">
+        <div class="logo-container">
+          <div class="nav-icon"></div>
+        </div>
+      </a>
+
+      <ul id="nav-links" class="rm-lnk">
+        <!-- for current page use class="current-page" -->
+        <li><a href="#">PROJECTS</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><button onclick="toggleTheme()"><svg height="38" width="40">
+          <circle cx="16" cy="20" r="16"   fill="var(--primary)" />
+        </svg></button></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">clap</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">hihat</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">kick</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">openhat</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">boom</span>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">ride</span>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">snare</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">tom</span>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <span class="sound">tink</span>
+      </div>
+    </div>
+  
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="83" src="sounds/hihat.wav"></audio>
+    <audio data-key="68" src="sounds/kick.wav"></audio>
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="71" src="sounds/boom.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tom.wav"></audio>
+    <audio data-key="76" src="sounds/tink.wav"></audio>
+  </section>
+  <script src="./app.js"></script>
+</body>
+
+</html>
